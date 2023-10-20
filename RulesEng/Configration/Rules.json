@@ -1,0 +1,48 @@
+[
+  {
+    "Name": "FloridaResident_Disqualified",
+    "Category": "StateMatch",
+    "Condition": [
+      "Florida"
+    ],
+    "IfDisqualified": true
+  },
+  {
+    "Name": "Above720_RateReduction",
+    "Category": "CreditScoreRange",
+    "Condition": [
+      "720",
+      "850"
+    ],
+    "IfIncrease": false,
+    "RateDifferece": 0.5
+  },
+  {
+    "Name": "Below720_RateIncrease",
+    "Category": "CreditScoreRange",
+    "Condition": [
+      "300",
+      "719"
+    ],
+    "IfIncrease": true,
+    "RateDifferece": 0.3
+  },
+  {
+    "Name": "ProductNameMatch_RateIncrease",
+    "Category": "ProductNameMatch",
+    "Condition": [
+      "7-1 Arm"
+    ],
+    "IfIncrease": true,
+    "RateDifferece": 0.5
+  },
+  {
+    "Name": "ProductNameContain_RateReduction",
+    "Category": "ProductNameContain",
+    "Condition": [
+      "Cabin"
+    ],
+    "IfIncrease": false,
+    "RateDifferece": 0.5
+  }
+]

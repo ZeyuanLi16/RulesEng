@@ -1,0 +1,12 @@
+[
+  {
+    "Name": "John Doe",
+    "CreditScore": 750,
+    "State": "Texas"
+  },
+  {
+    "Name": "Jane Smith",
+    "CreditScore": 800,
+    "State": "Florida"
+  }
+]
