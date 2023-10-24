@@ -20,8 +20,9 @@ The final interest rate of a product varies for each person due to their unique 
 4. If the person has a credit score lower than 720, the interest_rate on the product is increased by .5.
 5. If the name of the product is "7-1 ARM", then 0.5 is added to the interest_rate of the product.
 
-Additional Rule:
-6. If the name of the product contains "Cabin", then reduce 0.5 interest_rate of the product.
+### Additional Rules:
+1. If the name of the product contains "Cabin", then reduce 0.5 interest_rate of the product.
+2. Winterfell has a default interest rate of 4.0.
 
 ## Getting Started
 
