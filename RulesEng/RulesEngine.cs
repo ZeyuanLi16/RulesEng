@@ -22,7 +22,17 @@
         {
             if (setting == null || setting.DefaultInterestRate < 0)
             {
-                throw new ArgumentOutOfRangeException($"Please use valid interest rate(> 0) in the setting config.", new Exception());
+                throw new ArgumentNullException($"Please use valid interest rate(> 0) in the setting config.", new Exception());
+            }
+
+            if (mapper == null)
+            {
+                throw new ArgumentNullException($"Mapper is null.", new Exception());
+            }
+
+            if (string.IsNullOrWhiteSpace(configPath))
+            {
+                throw new ArgumentNullException($"Please use valid interest rate(> 0) in the setting config.", new Exception());
             }
 
             this.mapper = mapper;

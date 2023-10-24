@@ -18,7 +18,7 @@
 
             foreach (string state in stateMatchRule.Condition)
             {
-                if (string.IsNullOrEmpty(state))
+                if (string.IsNullOrWhiteSpace(state))
                 {
                     continue;
                 }

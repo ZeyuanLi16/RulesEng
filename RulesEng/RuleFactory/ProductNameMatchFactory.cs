@@ -17,7 +17,7 @@
 
             foreach (string name in productNameMatchRule.Condition)
             {
-                if (!string.IsNullOrEmpty(name))
+                if (!string.IsNullOrWhiteSpace(name))
                 {
                     matchNames.Add(name);
                 }
