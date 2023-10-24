@@ -37,6 +37,7 @@ Additional Rule:
 ```bash
 dotnet run --project RulesEng.csproj
 ```
+![image](https://github.com/ZeyuanLi16/RulesEng/assets/22227133/65031d72-a981-476a-8195-7f50cb0d461f)
 
 ### Running Tests
 
