@@ -1,7 +1,20 @@
 ﻿namespace RulesEng.Model
 {
-    public class RuleStateMatch : Rule
+    public class RuleStateMatch : Rule, IRule
     {
-        public string[] States { get; set; }
+        public List<USState> MatchStates { get; set; }
+
+        public bool RunRuleCondition(Person person, Product product)
+        {
+            foreach (USState matchState in this.MatchStates)
+            {
+                if (person.State == matchState)
+                {
+                    return true;
+                }
+            }
+
+            return false;
+        }
     }
 }

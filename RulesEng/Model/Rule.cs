@@ -14,14 +14,17 @@
 
         public double RateDifferece { get; set; }
 
-        public Product RunRuleAction(Product product)
+        public void RunRuleAction(Product product)
         {
-            throw new NotImplementedException();
-        }
+            if (this.IfDisqualified == true)
+            {
+                product.Disqualified = true;
+            }
 
-        public virtual bool RunRuleCondition(Person person)
-        {
-            throw new NotImplementedException();
+            if (this.IfIncrease != null)
+            {
+                product.InterstRate = product.InterstRate + ((bool)this.IfIncrease ? this.RateDifferece : -this.RateDifferece);
+            }
         }
     }
 }

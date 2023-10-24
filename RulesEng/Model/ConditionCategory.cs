@@ -2,9 +2,9 @@
 {
     public enum ConditionCategory
     {
-        StateMatch,
         CreditScoreRange,
-        ProductNameMatch,
         ProductNameContain,
+        ProductNameMatch,
+        StateMatch,
     }
 }

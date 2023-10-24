@@ -4,7 +4,7 @@
     {
         public string Name { get; set; }
 
-        public double InterstRate { get; set; }
+        public double? InterstRate { get; set; }
 
         public bool Disqualified { get; set; }
 

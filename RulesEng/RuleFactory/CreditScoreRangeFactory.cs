@@ -1,21 +1,18 @@
-﻿namespace RulesEng.RulesCreator
+﻿namespace RulesEng.Factory
 {
     using AutoMapper;
     using RulesEng.Model;
 
-    public class CreditScoreRangeCreator : RulesCreator
+    public class CreditScoreRangeFactory : RuleFactory
     {
-        private readonly IMapper mapper;
-
-        public CreditScoreRangeCreator(Rule rule, IMapper mapper)
+        public CreditScoreRangeFactory(IMapper mapper)
         {
-            this.Rule = rule;
-            this.mapper = mapper;
+            this.Mapper = mapper;
         }
 
-        public override Rule CreateRule()
+        public override RuleCreditScoreRange CreateRule(Rule rule)
         {
-            RuleCreditScoreRange creditScoreRangeRule = this.mapper.Map<RuleCreditScoreRange>(this.Rule);
+            RuleCreditScoreRange creditScoreRangeRule = this.Mapper.Map<RuleCreditScoreRange>(rule);
             int scoreLowerRange = 0;
             int scoreUpperRange = 0;
             try
@@ -26,6 +23,7 @@
             catch (FormatException ex)
             {
                 Console.WriteLine($"Please use number format for rules {creditScoreRangeRule.Name}. " + ex.Message);
+                throw;
             }
 
             if (scoreLowerRange < 300 || scoreLowerRange > 850 || scoreUpperRange < 300 || scoreUpperRange > 850)
