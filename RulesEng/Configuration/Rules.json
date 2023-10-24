@@ -15,7 +15,7 @@
       "850"
     ],
     "IfIncrease": false,
-    "RateDifferece": 0.5
+    "RateDifferece": 0.3
   },
   {
     "Name": "Below720_RateIncrease",
@@ -25,7 +25,7 @@
       "719"
     ],
     "IfIncrease": true,
-    "RateDifferece": 0.3
+    "RateDifferece": 0.5
   },
   {
     "Name": "ProductNameMatch_RateIncrease",
