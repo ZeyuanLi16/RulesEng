@@ -1,0 +1,12 @@
+[
+  {
+    "Name": "Above720_RateReduction",
+    "Category": "CreditScoreRange",
+    "Condition": [
+      "720",
+      "900"
+    ],
+    "IfIncrease": false,
+    "RateDifferece": 0.5
+  }
+]
