@@ -8,9 +8,9 @@
 
     public class RulesEngine
     {
-        private IMapper mapper;
+        public IMapper mapper;
 
-        private string configPath;
+        public string configPath;
 
         public Person[] persons { get; set; }
 
@@ -20,11 +20,13 @@
 
         public List<Tuple<Person, List<Product>>> Solutions { get; private set; }
 
+        public RulesEngine() { }
+
         public RulesEngine(Setting setting, IMapper mapper, string configPath)
         {
             if (setting == null || setting.DefaultInterestRate < 0)
             {
-                throw new ArgumentNullException($"Please use valid interest rate(> 0) in the setting config.", new Exception());
+                throw new ArgumentException($"Please use valid interest rate(> 0) in the setting config.", new Exception());
             }
 
             if (mapper == null)

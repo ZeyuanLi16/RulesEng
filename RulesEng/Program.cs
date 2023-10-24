@@ -10,7 +10,7 @@ namespace RulesEng
 
     class Program
     {
-        private const string ConfigPath = $@"Configration\";
+        private const string ConfigPath = $@"Configuration\";
 
         public static void Main(string[] args)
         {

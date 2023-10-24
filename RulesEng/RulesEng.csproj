@@ -12,16 +12,16 @@
   </ItemGroup>
 
   <ItemGroup>
-      <None Update="Configration\Settings.json">
+      <None Update="Configuration\Settings.json">
           <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </None>
-      <None Update="Configration\Persons.json">
+      <None Update="Configuration\Persons.json">
           <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </None>
-      <None Update="Configration\Products.json">
+      <None Update="Configuration\Products.json">
           <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </None>
-      <None Update="Configration\Rules.json">
+      <None Update="Configuration\Rules.json">
           <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </None>
   </ItemGroup>

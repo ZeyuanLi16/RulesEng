@@ -13,6 +13,10 @@
         public override RuleStateMatch CreateRule(Rule rule)
         {
             RuleStateMatch stateMatchRule = this.Mapper.Map<RuleStateMatch>(rule);
+            if (rule.RateDifferece < 0)
+            {
+                throw new ArgumentOutOfRangeException($"Please use valid interest rate(> 0) for rule: {rule.Name}.", new Exception());
+            }
 
             List<USState> matchStates = new List<USState>();
 

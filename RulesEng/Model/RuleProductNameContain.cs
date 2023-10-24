@@ -8,7 +8,7 @@
         {
             foreach (string matchName in this.MatchNames)
             {
-                if (product.Name.Contains(matchName))
+                if (product.Name.Contains(matchName, StringComparison.OrdinalIgnoreCase))
                 {
                     return true;
                 }

@@ -13,6 +13,11 @@
         public override RuleCreditScoreRange CreateRule(Rule rule)
         {
             RuleCreditScoreRange creditScoreRangeRule = this.Mapper.Map<RuleCreditScoreRange>(rule);
+            if (rule.RateDifferece < 0)
+            {
+                throw new ArgumentOutOfRangeException($"Please use valid interest rate(> 0) for rule: {rule.Name}.", new Exception());
+            }
+
             int scoreLowerRange = 0;
             int scoreUpperRange = 0;
             try
