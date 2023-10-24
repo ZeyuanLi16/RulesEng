@@ -10,11 +10,13 @@
     {
         private IMapper mapper;
 
-        private Person[] persons;
+        private string configPath;
 
-        private IRule[] rules;
+        public Person[] persons { get; set; }
 
-        private Product[] products;
+        public IRule[] rules { get; set; }
+
+        public Product[] products { get; set; }
 
         public List<Tuple<Person, List<Product>>> Solutions { get; private set; }
 
@@ -36,9 +38,10 @@
             }
 
             this.mapper = mapper;
-            this.persons = this.InitializePersons(configPath);
-            this.products = this.InitializeProducts(setting.DefaultInterestRate, configPath);
-            this.rules = this.InitializeRules(configPath);
+            this.configPath = configPath;
+            this.persons = this.InitializePersons();
+            this.products = this.InitializeProducts(setting.DefaultInterestRate);
+            this.rules = this.InitializeRules();
         }
 
         public void Run()
@@ -100,9 +103,9 @@
             Console.ReadKey();
         }
 
-        private Person[] InitializePersons(string configPath)
+        public Person[] InitializePersons()
         {
-            string personContent = File.ReadAllText($@"{configPath}\Persons.json");
+            string personContent = File.ReadAllText($@"{this.configPath}\Persons.json");
             Person[] persons = JsonConvert.DeserializeObject<Person[]>(personContent) !;
             foreach (Person person in persons)
             {
@@ -115,10 +118,10 @@
             return persons;
         }
 
-        private Product[] InitializeProducts(double defaultRate, string configPath)
+        public Product[] InitializeProducts(double defaultRate)
         {
-            string productContent = File.ReadAllText($@"{configPath}\Products.json");
-            Product[] products = JsonConvert.DeserializeObject<Product[]>(productContent)!;
+            string productContent = File.ReadAllText($@"{this.configPath}\Products.json");
+            Product[] products = JsonConvert.DeserializeObject<Product[]>(productContent) !;
             foreach (Product product in products)
             {
                 if (product.InterstRate == null)
@@ -134,10 +137,10 @@
             return products;
         }
 
-        private IRule[] InitializeRules(string configPath)
+        public IRule[] InitializeRules()
         {
-            string ruleContent = File.ReadAllText($@"{configPath}\Rules.json");
-            Rule[] rules = JsonConvert.DeserializeObject<Rule[]>(ruleContent)!;
+            string ruleContent = File.ReadAllText($@"{this.configPath}\Rules.json");
+            Rule[] rules = JsonConvert.DeserializeObject<Rule[]>(ruleContent) !;
 
             Dictionary<ConditionCategory, RuleFactory> factoryDict = new ();
             factoryDict.Add(ConditionCategory.CreditScoreRange, new CreditScoreRangeFactory(this.mapper));
