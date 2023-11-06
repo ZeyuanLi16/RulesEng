@@ -48,6 +48,8 @@ dotnet run --project RulesEng.csproj
 ```bash
 dotnet test RulesEng.Test.csproj
 ```
+## Class Diagram
+![image](https://github.com/ZeyuanLi16/RulesEng/assets/22227133/76062c8c-cd9f-4f67-8653-3507a08185df)
 
 ## Feedback and Contributions
 
